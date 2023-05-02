@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineLike } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Chef = () => {
 
@@ -34,7 +35,7 @@ const Chef = () => {
                                     </div>
                                 </div>
                                 <div className="card-actions justify-end">
-                                    <button className="btn bg-red-500">View Recipes</button>
+                                    <Link to={`/chef/${chef.id}`} className="btn bg-red-500">View Recipes</Link>
                                 </div>
                             </div>
                         </div>
