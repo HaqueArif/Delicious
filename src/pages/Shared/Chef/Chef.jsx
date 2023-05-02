@@ -13,28 +13,33 @@ const Chef = () => {
     }, [])
 
     return (
-       <div className=' bg-orange-100 pt-20'>
-        <h4 className="text-5xl lg:text-8xl text-center text-red-500 font-semibold mb-10">Our Chef</h4>
-         <div className='grid grid-cols-3 px-28 pb-20 gap-10 ' >
-            
-            {
-                chefInfo.map(chef => <div key={chef.id}>
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img className='w-60' src={chef.chef_image} alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{chef.name}</h2>
-                            <p>Years of Experience: {chef.experience}</p>
-                            <p>Total Recipes: </p>
-                            <p><AiOutlineLike/>{chef.likes}</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn bg-red-500">View Recipes</button>
+        <div className=' bg-orange-100 pt-20'>
+            <h4 className="text-5xl lg:text-7xl text-center text-red-500 font-semibold mb-16">Our Chef</h4>
+            <div className='grid lg:grid-cols-2 xl:grid-cols-3 px-2 lg:px-20 xl:px-20 2xl:px-28 pb-20 gap-10 ' >
+
+                {
+                    chefInfo.map(chef => <div key={chef.id}>
+                        <div className="card lg:w-96 bg-base-100 pt-10 mx-auto  shadow-xl">
+                            <figure><img className='w-60 px-2' src={chef.chef_image} alt="Shoes" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title text-slate-800">{chef.name}</h2>
+                                <p className='text-slate-600'>Years of Experience: <span className='text-red-500'>{chef.experience}</span></p>
+                                
+                                <div className='flex justify-between'>
+                                <p className='text-slate-600'>Total Recipes: <span className='text-red-500'>{chef.total_recipes}</span> </p>
+                                <div className='flex items-center gap-2'>
+                                    <AiOutlineLike /><p className='text-red-500'>{chef.likes}</p>
+                                </div>
+                                </div>
+                                <div className="card-actions justify-end">
+                                    <button className="btn bg-red-500">View Recipes</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>)
-            }
+                    </div>)
+                }
+            </div>
         </div>
-       </div>
     );
 };
 
