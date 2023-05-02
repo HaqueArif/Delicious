@@ -4,7 +4,7 @@ import Header from '../Shared/Header/Header/Header';
 const Home = () => {
     return (
         <div>
-           
+            <Header></Header>
         </div>
     );
 };
