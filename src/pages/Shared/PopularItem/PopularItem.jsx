@@ -15,7 +15,7 @@ const PopularItem = () => {
 
     return (
         <div className=' lg:px-20 lg:pt-20 lg:pb-10  background'>
-            <h4 className="text-5xl lg:text-8xl text-center text-red-500 font-semibold mb-10">Popular</h4>
+            <h4 className="text-5xl lg:text-8xl text-center text-red-500 font-semibold pt-10 mb-10">Popular</h4>
             <p className='px-5 lg:px-44 text-center mb-10'>Discover our most popular dishes - a culinary journey featuring mouth-watering options for all tastes. Start with savory appetizers perfect for sharing, move on to delectable entrees from classic comfort foods to exotic flavors, and finish with decadent desserts. Our popular section has something for everyone. Come taste why our customers can't get enough of these crowd-pleasers.</p>
             
             <div className='flex justify-center'>
