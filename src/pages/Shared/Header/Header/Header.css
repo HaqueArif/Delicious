@@ -1,0 +1,6 @@
+.header{
+    background-image: url(../../../../assets/g1.png);
+    height: calc(100vh - 64px);
+    background-position:center;
+    background-size: cover;
+}
