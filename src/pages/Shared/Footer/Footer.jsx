@@ -9,6 +9,7 @@ const Footer = () => {
                     <span className="footer-title text-3xl ">About Us</span>
                     <p>Experience the best Chinese Cuisine at DELICIOUS. We use only the freshest ingredients and authentic recipes to create delicious dishes that will satisfy your taste buds.</p>
                 </div>
+
                 <div className='grid md:grid-cols-3 gap-10'>
                     <div className='lg:ml-auto'>
                         <span className="footer-title">About</span>
@@ -19,6 +20,7 @@ const Footer = () => {
                         <p className="link link-hover">Terms & Condition</p>
                         <p className="link link-hover">Privacy Policy</p>
                     </div>
+
                     <div className='lg:ml-auto'>
                         <span className="footer-title">Services</span>
                         <p className="link link-hover">How to Order</p>
@@ -27,6 +29,7 @@ const Footer = () => {
                         <p className="link link-hover">Promo</p>
                         <p className="link link-hover">Payment Method</p>
                     </div>
+
                     <div className='lg:ml-auto'>
                         <span className="footer-title">Follow</span>
                         <p className="flex items-center gap-2 link link-hover"><FaFacebook/>Facebook</p>
@@ -36,7 +39,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-
         </div>
     );
 };
