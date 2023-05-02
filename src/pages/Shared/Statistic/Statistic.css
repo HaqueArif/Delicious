@@ -1,0 +1,6 @@
+.bg-statistic{
+    background-image: url(../../../assets/os.png);
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
