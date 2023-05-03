@@ -2,10 +2,20 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../Providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
+import { getAuth } from "firebase/auth";
 
 const NavigationBar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
 
     return (
         <div>
@@ -28,23 +38,23 @@ const NavigationBar = () => {
                         <ul className="menu menu-horizontal px-1">
                             <li><Link to="/home" className='text-white font-bold'>Home</Link></li>
                             <li><Link to="/blog" className='text-white font-bold'>Blog</Link></li>
-                            
+
                         </ul>
                     </div>
 
 
                     <div className="navbar-end">
-                        
+
                         {user ?
                             (<div className='flex items-center'>
-                             {user.profilePicture? <img
+                                {user.photoURL ? <img
                                     className='w-8 h-8 lg:w-12 lg:h-12 rounded-full mr-2'
-                                    src={user.profilePicture}
+                                    src={user.photoURL}
                                     alt={user.displayName}
                                     title={user.displayName}
-                                /> :<FaUserCircle className='w-8 h-8 lg:w-12 lg:h-12 rounded-full mr-2' title={user.displayName} /> }
-                                
-                                <Link className="px-5 py-3 rounded-md text-white font-bold bg-orange-400 border-none hidden lg:block ">Logout</Link>
+                                /> : <FaUserCircle className='w-8 h-8 lg:w-12 lg:h-12 rounded-full mr-2' title={user.displayName} />}
+
+                                <Link to="/login" onClick={handleLogOut} className="px-5 py-3 rounded-md text-white font-bold bg-orange-400 border-none hidden lg:block ">Logout</Link>
 
                             </div>
 

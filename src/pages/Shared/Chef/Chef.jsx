@@ -23,7 +23,7 @@ const Chef = () => {
                     chefInfo.map(chef => <div key={chef.id}>
                         <div className="card lg:w-96 bg-base-100 p-1  mx-auto   shadow-xl">
                             <div className='bg-orange-100 py-10 rounded-2xl shadow-md'>
-                            <LazyLoad height={200} width={240} threshold={0.95}>
+                            <LazyLoad height={200} width={370} threshold={.5}>
                                     <figure><img className='w-60 px-2' src={chef.chef_image} alt="Shoes" /></figure>
                                 </LazyLoad>
                             </div>

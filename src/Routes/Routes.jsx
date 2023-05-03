@@ -8,6 +8,7 @@ import Errorpage from "../pages/Errorpage.jsx/Errorpage";
 import LoginLayout from "../layout/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'chef',
-        element: <ViewRecipieDetails></ViewRecipieDetails>,
+        element: <PrivateRoutes><ViewRecipieDetails></ViewRecipieDetails></PrivateRoutes>,
         children: [
             {
                 path: ':id',
