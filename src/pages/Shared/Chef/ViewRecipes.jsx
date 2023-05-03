@@ -28,7 +28,7 @@ const ViewRecipes = () => {
     
 
     return (
-        <div className='lg:px-40 bg-red-500 py-20 px-5'>
+        <div className='lg:px-40 bg-red-500 py-20 px-5 border-orange-200 border-t-2'>
             {
                 recipes.map((recipe, i) => <div key={i}>
                     <div className="card card-compact md:w-8/12 mx-auto bg-base-100 shadow-xl mb-10">

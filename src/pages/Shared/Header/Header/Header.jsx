@@ -10,7 +10,7 @@ const Header = () => {
                     <p className='text-white text-5xl lg:text-9xl mb-8'>Delicious</p>
                 </div>
                 <p className='text-white lg:px-40 lg:text-xl mb-10'>Experience the best Chinese Cuisine at DELICIOUS. We use only the freshest ingredients and authentic recipes to create delicious dishes that will satisfy your taste buds.</p>
-                <button className='btn'>Show Recipes</button>
+                <button className='btn bg-orange-400 border-none'>Show Recipes</button>
             </div>
         </div>
     );

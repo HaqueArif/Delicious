@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
     const user = {displayName: 'Shamim'}
 
     const authInfo = {
-        user
+        // user
     }
     
     return (
