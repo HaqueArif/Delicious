@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BiRestaurant } from "react-icons/bi";
 import './PopularItems.css'
+
+
 const PopularItem = () => {
 
     const [items, setItems] = useState([]);
@@ -12,6 +14,7 @@ const PopularItem = () => {
             .then(data => setItems(data))
             .catch(error => console.log(error));
     }, [])
+
 
     return (
         <div className=' lg:px-20 lg:pt-20 lg:pb-10  background'>

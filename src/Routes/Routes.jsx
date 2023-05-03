@@ -3,8 +3,8 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Blog from "../pages/Blog/Blog";
 import ViewRecipes from "../pages/Shared/Chef/ViewRecipes";
-import Chef from "../pages/Shared/Chef/Chef";
 import ViewRecipieDetails from "../pages/Shared/Chef/ViewRecipieDetails";
+import Errorpage from "../pages/Errorpage.jsx/Errorpage";
 
 
 const router = createBrowserRouter([
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
             }
         ]
+    },
+    {
+        path:'*',
+        element:<Errorpage></Errorpage>
     }
 ])
 
