@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AiOutlineLike } from 'react-icons/ai';
 import { FaArrowAltCircleDown, FaArrowDown, FaHeart, FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa';
-import Rating from 'react-rating';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 import { useLoaderData } from 'react-router-dom';
 
 
@@ -48,14 +49,8 @@ const ViewRecipes = () => {
                 recipes.map((recipe, i) => <div key={i}>
                     <div className="card card-compact md:w-8/12 mx-auto bg-base-100 shadow-xl mb-10">
                         <figure className='bg-orange-100 m-1 py-5'><img className='rounded-xl ' src={recipe.image} alt="items" /></figure>
-                        <p className='text-center mt-5'>
-                            <Rating
-                                readonly
-                                placeholderRating={recipe.rating.number}
-                                emptySymbol={<FaRegStar></FaRegStar>}
-                                placeholderSymbol={<FaStar className='text-red-500'></FaStar>}
-                                fullSymbol={<FaStar></FaStar>}
-                            />
+                        <p className='flex justify-center mt-5'>
+                        <Rating style={{ maxWidth: 100 }} value={recipe.rating.number} readOnly />
                         </p>
 
                         <div className="card-body text-center">
