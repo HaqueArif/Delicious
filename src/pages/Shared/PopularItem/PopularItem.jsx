@@ -9,7 +9,7 @@ const PopularItem = () => {
     console.log(items)
 
     useEffect(() => {
-        fetch('http://localhost:5000/popular')
+        fetch('https://delicious-assignment-serversite-haquearif143-gmailcom.vercel.app/popular')
             .then(res => res.json())
             .then(data => setItems(data))
             .catch(error => console.log(error));
@@ -42,11 +42,6 @@ const PopularItem = () => {
 
                 </div>
             </div>
-
-
-
-
-
         </div>
     );
 };

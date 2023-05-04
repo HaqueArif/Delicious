@@ -33,8 +33,8 @@ const Register = () => {
                 console.log(createdUser);
                 setError(null)
                 navigate('/login')
-
             })
+
             .catch(error => {
                 console.log(error);
                 if (error.code === "auth/email-already-in-use") {
@@ -47,7 +47,6 @@ const Register = () => {
                     setError("An error occurred. Please try again later.");
                 }
             })
-
     }
 
     return (
@@ -56,6 +55,7 @@ const Register = () => {
                 <h2 className='text-3xl font-bold lg:text-5xl text-gray-800 mb-10 '>Register</h2>
                 <p className='text-gray-800'>If you experience any issues during the registration process, reach out to the DELICIOUS customer support team for assistance. Consider opting in to the DELICIOUS loyalty program or email newsletter, if available, to receive special offers, promotions, and other benefits.</p>
             </div>
+
             <form onSubmit={handleRegister}>
                 <div className='max-w-sm shadow-2xl bg-base-100 rounded-2xl mx-auto pt-2 pb-10 px-2  '>
                     <div className=' rounded-2xl px-5 md:px-8 py-8'>
@@ -64,6 +64,7 @@ const Register = () => {
                             <label htmlFor="name">Name</label>
                             <input type="text" name='name' placeholder='Your Name' className='border bg-transparent border-gray-500 rounded-lg py-3 px-3' required />
                         </div>
+
                         <div className='flex flex-col mb-3'>
                             <label htmlFor="email">Email</label>
                             <input type="email" name='email' placeholder='Your Email' className='border bg-transparent border-gray-500 rounded-lg py-3 px-3' required />
@@ -84,6 +85,7 @@ const Register = () => {
                     <div className='mt-10 px-6'>
                         <button className=' btn w-full bg-red-500'>Register</button>
                     </div>
+                    
                     <div className='text-center mt-2'>
                         <Link to="/login" className='hover:btn-link text-sm'>Already have an Account? Login</Link>
                     </div>

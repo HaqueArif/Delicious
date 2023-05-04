@@ -6,19 +6,19 @@ import { getAuth } from "firebase/auth";
 
 const NavigationBar = () => {
 
-    
+
     const { user, logOut } = useContext(AuthContext);
-    const navLinkStyles = ({isActive})=>{
+    const navLinkStyles = ({ isActive }) => {
         return {
             fontWeight: isActive ? 'bold' : 'normal',
             background: isActive ? '#f0932b' : 'normal',
             padding: isActive ? '10px 18px' : '',
-            borderRadius: isActive ? '20px': ''
+            borderRadius: isActive ? '20px' : ''
         }
     }
 
-   
-    
+
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -40,17 +40,16 @@ const NavigationBar = () => {
                             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
                                 <li><Link to="/home" className=''>Home</Link></li>
                                 <li><Link to="/blog">Blog</Link></li>
-                               {user &&  <Link to="/login" onClick={handleLogOut} className="btn bg-orange-400 border-none">Logout</Link>}
+                                {user && <Link to="/login" onClick={handleLogOut} className="btn bg-orange-400 border-none">Logout</Link>}
                             </ul>
                         </div>
                         <Link to='/home' className="btn btn-ghost normal-case sm:text-xl lg:text-3xl text-white font-extrabold ">Delicious</Link>
                     </div>
+
                     <div className="navbar-center hidden lg:flex">
                         <ul className=" menu-horizontal px-1">
-                            
                             <li className='text-white px-5'><NavLink to="/home" style={navLinkStyles}  > <button className=''>Home</button> </NavLink></li>
                             <li className='text-white'><NavLink to="/blog" style={navLinkStyles} >Blog</NavLink></li>
-
                         </ul>
                     </div>
 
@@ -67,22 +66,10 @@ const NavigationBar = () => {
                                 /> : <FaUserCircle className='w-8 h-8 lg:w-12 lg:h-12 rounded-full mr-2' title={user.displayName} />}
 
                                 <Link to="/login" onClick={handleLogOut} className="px-5 py-3 rounded-md text-white font-bold bg-orange-400 border-none hidden lg:block ">Logout</Link>
-
-                            </div>
-
-
-                            ) : (
-                                <Link to="/login" className="btn border-none bg-orange-400">Login</Link>
-                            )}
-
-
-                        {/* {user ?  : } */}
-
-
+                            </div>) : (<Link to="/login" className="btn border-none bg-orange-400">Login</Link>)}
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

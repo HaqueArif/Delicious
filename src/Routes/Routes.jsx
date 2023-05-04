@@ -54,7 +54,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <ViewRecipes></ViewRecipes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+                loader: ({ params }) => fetch(`https://delicious-assignment-serversite-haquearif143-gmailcom.vercel.app/chef/${params.id}`)
             }
         ]
     },

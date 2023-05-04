@@ -30,6 +30,7 @@ const Blog = () => {
                 <p>Want to download ? </p>
                 <button onClick={downloadPDF} disabled={!(loader === false)} className='btn-sm text-white rounded-xl shadow-lg bg-orange-300'> {loader ? "Downloading" : " Download"}</button>
             </div>
+            
             <div className=' body lg:px-40  pb-20 pt-5 px-5  min-h-screen'>
                 <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box shadow-lg mb-2">
                     <div className="collapse-title text-xl font-medium">
