@@ -3,6 +3,7 @@ import Header from '../Shared/Header/Header/Header';
 import PopularItem from '../Shared/PopularItem/PopularItem';
 import Chef from '../Shared/Chef/Chef';
 import Statistic from '../Shared/Statistic/Statistic';
+import Subscribe from '../Shared/Subscribe/Subscribe';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <PopularItem></PopularItem>
             <Chef></Chef>
             <Statistic></Statistic>
+            <Subscribe></Subscribe>
         </div>
     );
 };

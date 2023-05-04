@@ -4,17 +4,25 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Register = () => {
 
-    const [error , setError] = useState(null);
+    const [error, setError] = useState(null);
 
-    const { createUser, updateUserData, logOut } = useContext(AuthContext);
+    const { loading, createUser, updateUserData, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
+
+    if(loading){
+        return <div className='min-h-screen flex justify-center items-center'>
+            <p className='animate-ping'>Loading</p>
+        </div>
+    }
+
     const handleRegister = event => {
         event.preventDefault();
-        const from = event.target;
-        const name = from.name.value;
-        const email = from.email.value;
-        const password = from.password.value;
-        const photo = from.photo.value;
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+        form.reset();
 
         console.log(name, photo, email, password);
         createUser(email, password)
@@ -29,12 +37,15 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error);
-                const existEmail =  'Firebase: Error (auth/email-already-in-use).'
-                if(error.message == existEmail){
-                    const error = 'Email-already-in-use';
-                    setError(error)
+                if (error.code === "auth/email-already-in-use") {
+                    setError("Email already in use. Please try a different email.");
+                } else if (error.code === "auth/invalid-email") {
+                    setError("Invalid email address. Please enter a valid email.");
+                } else if (error.code === "auth/weak-password") {
+                    setError("Password must be 6 characters");
+                } else {
+                    setError("An error occurred. Please try again later.");
                 }
-                
             })
 
     }
@@ -43,7 +54,7 @@ const Register = () => {
         <div className=' min-h-screen bg-red-500 border-orange-200 px-2   border-t-2  lg:flex  gap-20 justify-center items-center lg:px-40  md:px-20 pb-20 '>
             <div className='my-10 text-center lg:text-end'>
                 <h2 className='text-3xl font-bold lg:text-5xl text-gray-800 mb-10 '>Register</h2>
-                <p className='text-gray-800'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eius facilis natus voluptate quibusdam recusandae accusamus cum sapiente ullam non. Velit corrupti ipsa molestiae aliquam dolorum? Obcaecati dolorum ex sapiente.</p>
+                <p className='text-gray-800'>If you experience any issues during the registration process, reach out to the DELICIOUS customer support team for assistance. Consider opting in to the DELICIOUS loyalty program or email newsletter, if available, to receive special offers, promotions, and other benefits.</p>
             </div>
             <form onSubmit={handleRegister}>
                 <div className='max-w-sm shadow-2xl bg-base-100 rounded-2xl mx-auto pt-2 pb-10 px-2  '>

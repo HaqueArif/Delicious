@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineLike } from "react-icons/ai";
 import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
+import './Chef.css'
 
 const Chef = () => {
 
@@ -22,9 +23,11 @@ const Chef = () => {
                 {
                     chefInfo.map(chef => <div key={chef.id}>
                         <div className="card lg:w-96 bg-base-100 p-1  mx-auto   shadow-xl">
-                            <div className='bg-orange-100 py-10 rounded-2xl shadow-md'>
-                            <LazyLoad height={200} width={370} threshold={.5}>
-                                    <figure><img className='w-60 px-2' src={chef.chef_image} alt="Shoes" /></figure>
+                            <div className='bg-orange-100 py-10 rounded-2xl flex justify-center  shadow-md'>
+                                <LazyLoad height={200} width={200} threshold={.5}>
+                                    <div className='w-50'>
+                                        <img className='w-60 px-2' src={chef.chef_image} alt="Shoes" />
+                                    </div>
                                 </LazyLoad>
                             </div>
                             <div className="card-body">

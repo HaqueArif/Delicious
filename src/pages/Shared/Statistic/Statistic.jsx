@@ -15,14 +15,14 @@ const Statistic = () => {
                 </div>
                 <div className=' border-dashed border-8  mx-auto rounded-full h-64 w-64 mb-5 flex justify-center items-center'>
                     <div className='text-center'>
-                        <p className='text-4xl'>153</p>
-                        <p className='text-5xl font-bold'>Menu</p>
+                        <p className='text-4xl'>3.4K</p>
+                        <p className='text-5xl font-bold'>Store</p>
                     </div>
                 </div>
                 <div className=' border-dashed border-8  mx-auto rounded-full h-64 w-64 mb-5 flex justify-center items-center'>
                     <div className='text-center'>
-                        <p className='text-4xl'>153</p>
-                        <p className='text-5xl font-bold'>Menu</p>
+                        <p className='text-4xl'>32</p>
+                        <p className='text-5xl font-bold'>Country</p>
                     </div>
                 </div>
             </div>

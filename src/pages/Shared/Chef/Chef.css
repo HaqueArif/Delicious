@@ -1,0 +1,38 @@
+.LazyLoad {
+    opacity: 1;
+    transition: all 5s ease-in-out;
+    position: relative;
+}
+
+
+
+.LazyLoad::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../../../assets/Loading_icon.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 1;
+    animation: fadeIn 5s ease-in-out forwards;
+}
+
+.is-visible .LazyLoad::after {
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

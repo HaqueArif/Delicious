@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleIcon from "../../../assets/google.png"
-import facebookIcon from "../../../assets/facebook.png"
 import githubIcon from "../../../assets/github.png"
 import { AuthContext } from '../../../Providers/AuthProvider';
 
@@ -9,11 +8,17 @@ const Login = () => {
 
     const [error, setError] = useState(null);
     
-    const { signIn, SignInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const {loading, signIn, SignInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/home"
+
+    if(loading){
+        return <div className='min-h-screen flex justify-center items-center'>
+            <p className='animate-ping'>Loading</p>
+        </div>
+    }
 
     const handleGoogleSignin = () =>{
         SignInWithGoogle()
@@ -75,7 +80,7 @@ const Login = () => {
         <div className=' min-h-screen bg-red-500 border-orange-200 px-2   border-t-2  lg:flex  gap-20 justify-center items-center lg:px-40  md:px-20 pb-20 '>
             <div className='my-10 text-center lg:text-end'>
                 <h2 className='text-3xl font-bold lg:text-5xl text-gray-800 mb-10 '>Login</h2>
-                <p className='text-gray-800'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eius facilis natus voluptate quibusdam recusandae accusamus cum sapiente ullam non. Velit corrupti ipsa molestiae aliquam dolorum? Obcaecati dolorum ex sapiente.</p>
+                <p className='text-gray-800'>If you are having trouble logging in, reach out to the DELICIOUS customer support team for assistance. Make sure you have the correct login credentials, including your username and password.</p>
             </div>
             <form onSubmit={handleSignIn}>
                 <div className='max-w-sm shadow-2xl bg-base-100 rounded-2xl mx-auto pt-2 pb-10 px-2  '>
