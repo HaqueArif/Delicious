@@ -87,11 +87,11 @@ const Login = () => {
                     <div className=' rounded-2xl px-5 md:px-8 py-8'>
                         <div className='flex flex-col mb-3'>
                             <label htmlFor="email">Email</label>
-                            <input type="email" name='email' placeholder='Your Email' className='border bg-transparent border-gray-500 rounded-lg py-3 px-3' />
+                            <input type="email" name='email' placeholder='Your Email' className='border bg-transparent border-gray-500 rounded-lg py-3 px-3' required />
                         </div>
                         <div className='flex flex-col'>
                             <label htmlFor="password">Password</label>
-                            <input type="password" name='password' placeholder='Your Password' className='border bg-transparent  border-gray-500 rounded-lg py-3 px-3' />
+                            <input type="password" name='password' placeholder='Your Password' className='border bg-transparent  border-gray-500 rounded-lg py-3 px-3' required />
                             <span className='mt-2'>Forget password?</span>
                         </div>
                         <p className='mt-2 text-sm text-red-700'>{error}</p>
